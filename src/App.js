@@ -1,38 +1,19 @@
-import './App.css'
-import React, { useState } from 'react';
-import HigherOrLower from './HigherOrLower';
-
-const GAME_COMPONENTS = {
-  'higher-or-lower': <HigherOrLower />,
-};
+import './App.css';
+import React from 'react';
+import Header from './components/Header';
+import HigherOrLower from './components/HigherOrLower';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function Casino() {
-  const [selectedGame, setSelectedGame] = useState(null);
 
-  const gameSelect = (event) => {
-    const selectedValue = event.target.value;
-    setSelectedGame(selectedValue);
-  }
-
-  const SelectedGameComponent = GAME_COMPONENTS[selectedGame];
-
-  return (
-    <div className="main">
-      <div className="casino-wrapper">
-        <div className='title'>🎰 Casino App 🎰</div>
-        <div className='games'>
-          Choose a game:
-          <select className="game-select" onChange={gameSelect} name="table">
-          <option value="" selected></option>
-            <option value="higher-or-lower">Higher or Lower</option>
-          </select>
-          <div className="chips">$1000</div>
-        </div>
+  return (<Router>
+<Header />
+    <div className='game-render'>
+      <Routes>
+        <Route path="/HigherOrLower" element={<HigherOrLower />} />
+      </Routes>
       </div>
-
-      {SelectedGameComponent}
-
-    </div>
+  </Router>
   );
 }
 
