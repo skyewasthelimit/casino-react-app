@@ -11,7 +11,11 @@
 
 .title {
   font-size: 60px;
-  color: slateblue
+  color: slateblue;
+}
+
+.title-link {
+  text-decoration: none;
 }
 
 .casino-wrapper {
@@ -64,6 +68,27 @@
   padding: 20px;
 }
 
+.games-room-roulette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px;
+}
+
+.roulette-wrapper {
+  grid-template-columns: 60px 60px;
+  padding: 1px;
+  flex-direction: row;
+  font-size: 2rem;
+}
+
+.roulette {
+  color: white;
+  font-size: 60px;
+}
+
 .chips {
   padding: 2px;
   font-family: monospace;
@@ -89,7 +114,7 @@
 
 .higherlower-wrapper {
   grid-template-columns: 60px 60px;
-  padding: 30px;
+  padding: 1px;
   flex-direction: row;
   font-size: 2rem;
 }
@@ -117,9 +142,10 @@
 .results-text {
   padding: 5px;
   color: whitesmoke;
-  font-size: 6rem;
+  font-size: 2rem;
   text-align: center;
   pointer-events: none;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .placebet {
